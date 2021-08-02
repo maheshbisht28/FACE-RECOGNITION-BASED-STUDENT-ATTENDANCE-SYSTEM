@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'perfect-scrollbar.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								{% for col in cl_names %}
+								<th class="column1">{{ col }}</th>
+                                 {% endfor %}
+								
+
+
+
+							</tr>
+						</thead>
+						<tbody>
+							<!--    {% for st in student %} 
+								<tr><td class="column1">{{ st.id }}</td>
+									<td class="column1">{{ st.name }}</td>
+			                        <td class="column1">{{ st.name }}</td> 
+		                         	 <td class="column1">{{ st.roll_no }}</td>
+			                     
+			                    
+								{% endfor %}
+								-->
+									<form action="{% url 'test2' %}" method="post" >
+                                   {% csrf_token %}
+							    {% for ct in count %}
+			                       <tr><td> <input type = "text"  name="markatt"> </input> </td>
+			                  </tr>
+			                    {% endfor %}
+			                    
+
+			                       <!--
+								    <td class="column1">{{ st.name }}</td>
+		                         	<td class="column1">{{ st.Date }}</td>
+			                         <td class="column1">{{ st.roll_no }}</td>
+			                        <td class="column1">{{ st.year }}</td>
+									-->
+
+								
+								<tr><td>	
+								<button type="submit" class="btn btn-success">Submit</button>
+			                       
+			                   </td></tr>
+			                   </form>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	
+
+<!--===============================================================================================-->	
+	<!-- <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<!--	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<!--<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<!--<script src="js/main.js"></script>
+
+</body>
+</html>

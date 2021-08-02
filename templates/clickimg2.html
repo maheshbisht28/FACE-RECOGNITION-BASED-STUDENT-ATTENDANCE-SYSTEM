@@ -1,0 +1,302 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static 'indexstyle.css' %}" >
+<link rel="icon" href="{% static 'favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+  <link rel="stylesheet"  href="{% static 'awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'imate/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'select2.min.css' %}">
+  <link rel="stylesheet" href="{% static 'perfect-scrollbar.css' %}">
+
+  <link rel="stylesheet"  href="{% static 'util.css' %}">
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+<style >
+  .button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid black;
+  margin: 20px 20px 20px 20px;
+  color: #BFC0C0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+ .wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 714px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
+}  
+a{ font-size:20px; 
+  color:white;
+  text-align:right;
+}
+p{ font-size:19px;
+  color: black;
+ font-family: OpenSans-Regular
+}
+#container{width:100%;}
+#left{
+   float:left;  
+                background:#002147; 
+                width:19%; 
+                height:1000px;
+text-align: center;
+}
+#right{float:right;width:100px;}
+#center{margin:0 auto;width:500px;}
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: #e5dfdf;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:1000px;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 1);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(11){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+.circles li:nth-child(12){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+br {
+   display: block;
+   margin: 10px 0;
+}
+
+
+  </style>
+</head>
+<body>
+
+                 <div class="area" >
+                                    <ul class="circles">
+                                            <li></li><li></li><li></li><li></li> <li></li><li></li>
+                                            <li></li><li></li><li></li><li></li><li></li><li></li>
+                                    </ul>
+                   <div id="left">
+                           <br>
+                           <img src="{{ user.img.url }}"  alt="Avatar" width="232px" height="236px" align="middle" style="border-radius:50%;">
+                           <p style="color:white;" >{{user.first_name}} {{user.last_name}}</p>
+                           <br>
+                           <div  id="button-5">
+                              <a  href={% url 'Stud_dashboard' %} >Home</a></div>
+                              <br><br>
+                           <div  id="button-5">
+                            <a  href={% url 'checkattendance' %} color="black";>Check Attendance</a>
+                           </div>
+                            <br> 
+                            <br>
+                            <div  id="button-5">
+                            <a href={% url 'stud_att' %}>Add Attendance</a>
+                            </div>
+                            <br>
+                            <br>
+                            <div  id="button-5">
+                            <a href={% url 'createclass_time' %}>Create Class Attendance</a>
+                            </div>
+                            <br>
+                            <br>
+                            <div  id="button-5">
+                            <a href={% url 'edituserprofile'  pk=user.pk  %}> Profile</a>
+                            </div>
+                            <br>
+                            <br>
+                            <a href="{% url 'logout' %}">Logout</a>
+                            
+                   </div>
+
+                 <!-- <div class="col-sm-6" style="background-color:white;"> --> 
+                    <div id="center"> 
+                           <div align="center"><img src="{% static 'images/logo.png' %}" width="500px" height="300px" align="middle"></div>
+                           <p><h2 style="text-align:center;">Teacher Dashboard </h2></p>
+                             <br><br>
+
+                      
+                
+
+                   
+                        
+                       
+                        
+                          <p>First Name {{ st.first_name }}</p>
+                          <br> 
+                          
+                        <p> Last Name {{ st.last_name }}</p> 
+                        <br>
+                        <p> Roll no {{ st.roll_no }} </p>
+                        <br>
+                        <p>Status {{ attstatus.status }}</p>
+                        <br>
+                        <p>Add Time {{ attstatus.classtime }}</p>
+                        <br>
+                        <p>Course {{ attstatus.course }} </p>
+
+                         
+                      
+
+                        
+                      </div>     
+             </div>
+</body>
+</html>

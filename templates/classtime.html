@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static 'indexstyle.css' %}" >
+
+<link rel="stylesheet" href="{% static 'jquery-ui.css' %}">
+<link rel="stylesheet" href="{% static 'jquery-ui-timepicker-addon.css' %}">
+  <!-- End Container -->
+<script src="{% static 'jquery-ui.js' %}"></script>
+<script src="{% static 'jquery-ui-timepicker-addon.js' %}"></script>
+</head>
+<body>
+
+	<h1> Attendance System </h1>
+
+<!-- Flex Container -->
+<div id="container">
+
+    <!-- <a id="button-1" class="button" href="#">Let's Go!<img id="arrow-hover" src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"/></a>
+-->
+    <!-- <div class="button" id="button-2">
+    <div id="slide"></div>
+    <a href="#">Let's Go!</a>
+  </div> -->
+
+    <!-- <div class="button" id="button-3">
+    <div id="circle"></div>
+    <a href="#">Let's Go!</a>
+  </div> -->
+
+    <!-- <div class="button" id="button-4">
+    <div id="underline"></div>
+    <a href="#">Let's Go!</a>
+  </div> -->
+{% if user.is_authenticated %}
+    <p>You are welcome on Home Page</p>
+    <p>Your name is - {{user.first_name}} {{user.last_name}}</p>
+    <p>Your email is - {{user.email}}</p>
+    <br><br>
+    <a href="{% url 'logout' %}">Logout</a>
+    {% else %}
+    <a href="{% url 'login' %}">Login</a>
+    {% endif %}
+    <div class="button" id="button-5">
+         <div id="translate"></div>    <a href={% url 'Registerstudent' %}>Student</a>   </div> 
+
+<div class="button" id="button-5">
+         <div id="translate"></div>    <a href={% url 'Registerteacher' %}>Teacher</a>   </div> 
+
+ <!--  <div class="button" id="button-6">     <div id="spin"></div>     <a href="#">Let's Go!</a>   </div> -->
+
+    <!-- <div class="button" id="button-7">
+    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <a href="#">Let's Go!</a>
+  </div>
+-->
+
+
+    
+    <div class="wrapper">
+      <table>
+       {% for ob in objt %}
+        <tr>
+          <td>
+         {{ ob.course }}
+                
+        </td>
+        <td>
+                {{ ob.subject }} 
+           
+        </td>
+        <td>
+          
+                {{ ob.date  }} 
+            
+        </td>
+        
+                    
+         </tr>
+      {% endfor %}
+       </table>
+       </div>
+      
+       
+      
+
+</div>
+
+</body>
+</html>

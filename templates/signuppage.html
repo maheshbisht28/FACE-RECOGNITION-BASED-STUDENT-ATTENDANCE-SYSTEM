@@ -1,0 +1,331 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static 'indexstyle.css' %}" >
+<link rel="icon" href="{% static 'favicon.ico' %}">
+  <link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+  <link rel="stylesheet"  href="{% static 'awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'imate/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'select2.min.css' %}">
+  <link rel="stylesheet" href="{% static 'perfect-scrollbar.css' %}">
+
+  <link rel="stylesheet"  href="{% static 'util.css' %}">
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+<style>
+  
+ .button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid black;
+  margin: 20px 20px 20px 20px;
+  color: #BFC0C0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+ .wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 714px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
+}  
+a{ font-size:20px; 
+  color:white;
+  text-align:right;
+}
+p{ font-size:19px;
+  color: black;
+  font-family: OpenSans-Regular
+}
+#container{width:100%;}
+#left{
+   float:left;  
+                background:#002147; 
+                width:19%; 
+                height:1000px;
+text-align: center;
+}
+#right{float:right;width:100px;}
+#center{margin:0 auto;width:500px;}
+@import url('https://fonts.googleapis.com/css?family=Exo:400,700');
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    font-family: 'Exo', sans-serif;
+}
+
+
+.context {
+    width: 100%;
+    position: absolute;
+    top:50vh;
+    
+}
+
+.context h1{
+    text-align: center;
+    color: #fff;
+    font-size: 50px;
+}
+
+
+.area{
+    background: #e5dfdf;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);  
+    width: 100%;
+    height:1000px;
+    
+   
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 1);
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+.circles li:nth-child(11){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+.circles li:nth-child(12){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+br {
+   display: block;
+   margin: 10px 0;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: .25rem;
+    transition: all .15s ease-in-out;
+}
+
+
+</style>
+</head>
+<body>
+
+
+
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+
+    
+{% if form.is_student.value  %}
+<div id="container">
+  <div id="center"> 
+            <div align="center"><img src="{% static 'images/logo.png' %}" width="500px" height="300px" align="middle"></div>
+<br><br>
+
+
+<form  id="myform"  method="post", action = "{% url 'add_user_student' %}">
+{% csrf_token %}
+        <div class="wrapper">      
+                
+            <div id="button-5"> <p>   {{ form.roll_no.label_tag }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                
+                  {{ form.roll_no.errors }}
+                  {{ form.roll_no }}
+              </p>
+              </div>
+             <br><br>
+
+                    
+            <div id="button-5">   <p>  First Name &nbsp;&nbsp;&nbsp;{{ form.first_name}}</p> <br></div>
+            <div id="button-5">   <p>  Last Name  &nbsp;&nbsp;&nbsp;&nbsp;{{ form.last_name}} </p> <br></div>
+            <div id="button-5">   <p>  Email     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.email}}</p><br></div> 
+        <div id="button-5"><p>Student&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.is_student }}</p><br></div> 
+    <div id="button-5"><p>Course&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.course }}</p><br></div>    
+            <div id="button-5">   <p>  Password   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.password1 }} </p><br></div>
+            <div id="button-5">   <p>  Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ form.password2 }}     </p><br></div>
+               
+                  <div id="button-5">
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary" >Submit</button>
+                          </div> 
+                    
+        </div>
+
+</form>
+
+</div>
+</div>
+{% elif form.is_staff.value  %}
+<div class="area" >
+            <ul class="circles">
+             <li></li><li></li><li></li><li></li> <li></li><li></li>
+              <li></li><li></li><li></li><li></li><li></li><li></li>
+              </ul>
+  <div id="center"> 
+            <div align="center"><img src="{% static 'images/logo.png' %}" width="500px" height="300px" align="middle"></div>
+<br><br>
+
+
+<form  id="myform"  method="post", action = "{% url 'add_user_teacher' %}">
+
+{% csrf_token %}
+
+               
+            <div id="button-5">   <p>  First Name &nbsp;&nbsp;&nbsp;{{ form.first_name}}</p> <br></div>
+            <div id="button-5">   <p>  Last Name  &nbsp;&nbsp;&nbsp;&nbsp;{{ form.last_name}} </p> <br></div>
+            <div id="button-5">   <p>  Email     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.email}}</p><br></div> 
+        <div id="button-5"><p>Staff&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.is_staff }}</p><br></div> 
+            <div id="button-5">   <p>  Password   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ form.password1 }} </p><br></div>
+            <div id="button-5">   <p>  Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{ form.password2 }}     </p><br></div>
+               
+                  <div id="button-5">
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary" >Submit</button>
+                          </div>
+                
+</form>
+</div>
+</div>
+
+{% endif %}
+</body>
+</html>

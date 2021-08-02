@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="{% static 'indexstyle.css' %}" >
+<style >
+  .button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 2px solid #BFC0C0;
+  margin: 20px 20px 20px 20px;
+  color: #BFC0C0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+ .wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 714px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
+}  
+  </style>
+</head>
+<body>
+
+	<h1> Attendance System </h1>
+  
+
+<!-- Flex Container -->
+<div class="wrapper">
+  <h2 style="text-align:center;"> Student DashBoard </h2>
+  <br>
+  <div class="button" id="button-5">
+            <a href={% url 'stud_att' %}>Check Attendance</a>   </div> 
+  <div class="button" id="button-5">
+            <a href={% url 'stud_att' %}>Add Attendance</a>   </div>          
+
+    <!-- <a id="button-1" class="button" href="#">Let's Go!<img id="arrow-hover" src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-paper-plane-1-120.png?raw=true"/></a>
+-->
+    <!-- <div class="button" id="button-2">
+    <div id="slide"></div>
+    <a href="#">Let's Go!</a>
+  </div> -->
+
+    <!-- <div class="button" id="button-3">
+    <div id="circle"></div>
+    <a href="#">Let's Go!</a>
+  </div> -->
+
+    <!-- <div class="button" id="button-4">
+    <div id="underline"></div>
+    <a href="#">Let's Go!</a>
+  </div> -->
+    {% if user.is_authenticated %}
+    <br><br>
+    <p>You are welcome on Home Page</p>
+    <p>Your name is - {{user.first_name}} {{user.last_name}}</p>
+    <p>Your email is - {{user.email}}</p>
+    <p>Your year is - {{user.year}}</p>
+    <p>Your roll_no is - {{user.roll_no}}</p>
+    <p>Your Last_login is - {{user.last_login}}</p>
+    <p>Your date of joining is - {{user.date_joined}}</p>
+    <br><br>
+    <div class="button" id="button-5">
+         <div id="translate"></div>   <a href="{% url 'logout' %}">Logout</a>  </div> 
+
+    
+    {% else %}
+    <div class="button" id="button-5">
+         <div id="translate"></div>   <a href="{% url 'login' %}">Login</a>  </div> 
+    
+    {% endif %}
+    <br><br>
+
+
+ <!--  <div class="button" id="button-6">     <div id="spin"></div>     <a href="#">Let's Go!</a>   </div> -->
+
+    <!-- <div class="button" id="button-7">
+    <div id="dub-arrow"><img src="https://github.com/atloomer/atloomer.github.io/blob/master/img/iconmonstr-arrow-48-240.png?raw=true" alt="" /></div>
+    <a href="#">Let's Go!</a>
+  </div>
+-->
+
+  <!-- End Container -->
+</div>
+</div>
+</body>
+</html>
